@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .input-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .input-group input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 300px;
+            margin-right: 10px;
+        }
+        .input-group button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+        }
+        .input-group button:hover {
+            background-color: #0056b3;
+        }
+        .books-section {
+            margin-top: 20px;
+        }
+        .books-section h2 {
+            text-align: center;
+        }
+        .books-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .books-list li {
+            background: #e9ecef;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Recommendation System</h1>
+        <div class="input-group">
+            <input type="text" id="book-input" placeholder="Enter book title or keyword">
+            <button id="recommend-button">Recommend</button>
+        </div>
+        <div class="books-section">
+            <h2>Top 50 Books</h2>
+            <ul id="books-list" class="books-list">
+                <!-- Book items will be inserted here dynamically -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Example books data
+        const topBooks = [
+            "Book Title 1", "Book Title 2", "Book Title 3", "Book Title 4", "Book Title 5",
+            "Book Title 6", "Book Title 7", "Book Title 8", "Book Title 9", "Book Title 10",
+            "Book Title 11", "Book Title 12", "Book Title 13", "Book Title 14", "Book Title 15",
+            "Book Title 16", "Book Title 17", "Book Title 18", "Book Title 19", "Book Title 20",
+            "Book Title 21", "Book Title 22", "Book Title 23", "Book Title 24", "Book Title 25",
+            "Book Title 26", "Book Title 27", "Book Title 28", "Book Title 29", "Book Title 30",
+            "Book Title 31", "Book Title 32", "Book Title 33", "Book Title 34", "Book Title 35",
+            "Book Title 36", "Book Title 37", "Book Title 38", "Book Title 39", "Book Title 40",
+            "Book Title 41", "Book Title 42", "Book Title 43", "Book Title 44", "Book Title 45",
+            "Book Title 46", "Book Title 47", "Book Title 48", "Book Title 49", "Book Title 50"
+        ];
+
+        function displayBooks() {
+            const booksList = document.getElementById('books-list');
+            booksList.innerHTML = '';
+            topBooks.forEach(book => {
+                const li = document.createElement('li');
+                li.textContent = book;
+                booksList.appendChild(li);
+            });
+        }
+
+        document.getElementById('recommend-button').addEventListener('click', function() {
+            const input = document.getElementById('book-input').value;
+            alert(`Recommendation for: ${input}`);
+            // Add your recommendation logic here
+        });
+
+        // Display the books when the page loads
+        displayBooks();
+    </script>
+</body>
+</html>
