@@ -1,7 +1,7 @@
 from flask  import Flask,render_template,request
 import pickle
 import numpy as np
-#import requests
+import requests
 #print("flask",flask.__version__)
 
 
