@@ -1,8 +1,8 @@
-from flask import Flask,render_template,request
+from flask  import Flask,render_template,request
 import pickle
 import numpy as np
 import requests
-
+#print("flask",flask.__version__)
 
 
 popular_df = pickle.load(open('popular.pkl','rb'))
@@ -16,9 +16,9 @@ app = Flask(__name__)
 @app.route('/')
 
 
-@app.route('/recommend')
+@app.route('/rec')
 def recommend_ui():
-    return render_template('recommend.html')
+    return render_template('rec.html')
 
 @app.route('/recommend_books',methods=['post'])
 def recommend():
@@ -38,7 +38,7 @@ def recommend():
 
     print(data)
 
-    return render_template('recommend.html',data=data)
+    return render_template('rec.html',data=data)
 
 if __name__ == '__main__':
     app.run(debug=True)
